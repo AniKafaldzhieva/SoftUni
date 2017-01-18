@@ -1,2 +1,5 @@
-# SoftUni
-Course exercises / Technology Fundamentals 2017 
+               #SoftUni
+
+
+
+Course exercises / Technology Fundamentals 2017
