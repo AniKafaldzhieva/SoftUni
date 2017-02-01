@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _08.MostFrequentNumber
+namespace ConsoleApplication1
 {
     class Program
     {
@@ -12,30 +12,27 @@ namespace _08.MostFrequentNumber
         {
             int[] array = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
 
-            int previous = array[0];
-            int maxFrequent = 0;
-            int count = 1;
-            int maxCount = 0;
-
-            for (int i = 1; i < array.Length; i++)
+            int count = 1, tempCount;
+            int frequentNumber = array[0];
+            int tempNumber = 0;
+            for (int i = 0; i < (array.Length - 1); i++)
             {
-                int currentNumber = array[i];
-                if (currentNumber == previous)
+                tempNumber = array[i];
+                tempCount = 0;
+                for (int j = 0; j < array.Length; j++)
                 {
-                    count++;
-                    maxFrequent = array[i];
+                    if (tempNumber == array[j])
+                    {
+                        tempCount++;
+                    }
+                }
+                if (tempCount > count)
+                {
+                    frequentNumber = tempNumber;
+                    count = tempCount;
                 }
             }
-            if (count > maxCount)
-            {
-                maxCount = count;
-            }
-            if (array.Length == 1)
-            {
-                maxCount = 0;
-                maxFrequent = array[0];
-            }
-            Console.WriteLine($"{maxFrequent} - {maxCount}");
+            Console.WriteLine(frequentNumber);
         }
     }
 }
