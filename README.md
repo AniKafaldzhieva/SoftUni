@@ -2,4 +2,4 @@
 
 
 
-Course exercises / Technology Fundamentals 2017
+Course exercises / Technology Fundamentals 
